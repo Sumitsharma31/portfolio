@@ -3,6 +3,7 @@ import ParticlesBackground from "../component/ParticlesBackground";
 import { hover, motion, scale } from "framer-motion";
 import React from "react";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import avator from "../assets/avator.png";
 
 const socials = [
   { Icon: FaXTwitter, label: "x", href: "https://twitter.com/" },
@@ -162,6 +163,36 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
+        <div className="relative hidden lg:block">
+          <div
+            className="absolute top-1/2 -translate-y-1/2 pointer-events-none"
+            style={{
+              right: "10px",
+              width: "min(22vw,410px)",
+              height: "min(40vw, 760px)",
+              borderRadius: "50%",
+              filter: "blur(38px)",
+              opacity: 0.32,
+              background:
+                "conic-gradient(from 0deg,#1cd8d2,#00bf8f,#302b63,#1cd8d2)",
+            }}
+          />
+          <motion.img
+            src={avator}
+            alt="Sumit"
+            className="absolute top-1/2 -translate-y-1/2 object-contain select-none 
+          pointer-events-none 
+          "
+            style={{
+              right: "-30px",
+              width: "min(45vw , 780px)",
+              maxHeight: "90vh",
+            }}
+            initial={{ opacity: 0, y: 40, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          />
         </div>
       </div>
     </section>
