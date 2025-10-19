@@ -54,7 +54,6 @@ export default function Home() {
       className="w-full h-screen relative bg-black overflow-hidden"
     >
       <ParticlesBackground />
-
       {/* Background gradient blobs */}
       <div className="absolute inset-0">
         <div
