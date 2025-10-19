@@ -145,7 +145,7 @@ export default function About() {
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 text-center">
                 <p className="text-gray-500 text-xs md:text-sm">Focus</p>
                 <p className="text-white font-bold text-sm md:text-base leading-tight">
-                  Performance & UX
+                  Software Developer
                 </p>
               </div>
             </motion.div>

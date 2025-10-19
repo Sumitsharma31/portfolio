@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <title>Futuristic Double-Outline S Logo</title>
+  <desc>Minimal, geometric, white double-outline S with subtle glow on transparent background.</desc>
+
+  <defs>
+    <!-- Soft, futuristic outer glow -->
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <!-- tighter halo -->
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#FFFFFF" flood-opacity="0.65"/>
+      <!-- broader, softer falloff -->
+      <feDropShadow dx="0" dy="0" stdDeviation="22" flood-color="#FFFFFF" flood-opacity="0.28"/>
+    </filter>
+
+    <!-- Mask to split a single thick stroke into two parallel outlines with even spacing -->
+    <!-- Adjust gapWidth to control the spacing between the two outlines -->
+    <mask id="doubleLineMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+      <!-- Show everything by default -->
+      <rect x="0" y="0" width="1024" height="1024" fill="#fff"/>
+      <!-- Carve out the center band to create two parallel lines -->
+      <path id="sCenterlineMask"
+        d="M 720 180
+           A 320 260 0 0 0 360 360
+           A 320 260 0 0 1 320 840"
+        fill="none"
+        stroke="#000"
+        stroke-width="44"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+    </mask>
+
+    <!-- The same centerline path reused for the stroke -->
+    <path id="sCenterline"
+      d="M 720 180
+         A 320 260 0 0 0 360 360
+         A 320 260 0 0 1 320 840"
+      fill="none"/>
+  </defs>
+
+  <!-- Group: glowing, double-outline S -->
+  <g filter="url(#softGlow)" shape-rendering="geometricPrecision">
+    <!-- One thick stroke, split by the mask into two parallel white outlines -->
+    <!-- Stroke width = 2*lineWidth + gapWidth -->
+    <!-- Current settings: lineWidth ~ 60, gapWidth = 44 (tweak as needed) -->
+    <use href="#sCenterline"
+         stroke="#FFFFFF"
+         stroke-width="164"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         mask="url(#doubleLineMask)"/>
+  </g>
+</svg>

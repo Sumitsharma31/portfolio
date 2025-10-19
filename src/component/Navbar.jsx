@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import OverlayMenu from "./OverlayMenu";
-import Logo from "../assets/Logo.png";
+import Logo from "../assets/Logo.svg";
 import { FiMenu } from "react-icons/fi";
 
 export default function Navbar() {
@@ -62,7 +62,7 @@ export default function Navbar() {
         }`}
       >
         <div className=" flex  items-center space-x-2">
-          <img src={Logo} alt="" className="w-8 h-8" />
+          <img src={Logo} alt="Logo" className="w-8 h-8 mix-blend-multiply" />
           <div className="text-2xl font-bold text-white hidden sm:block">
             Sumit
           </div>
