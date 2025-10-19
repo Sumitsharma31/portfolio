@@ -33,7 +33,7 @@ export default function About() {
   };
 
   return (
-    <div className=" min-h-screen bg-gradient-to-br from-[#2c3336] via-[#0d1c2b] to-[#07181e] p-6 md:p-20   border border-blue-500 ">
+    <div className=" min-h-screen bg-gradient-to-br from-[#2c3336] via-[#0d1c2b] to-[#07181e] p-6 md:p-20 ">
       {/* Background gradient blobs */}
       <div className="absolute inset-0">
         <div
