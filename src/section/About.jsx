@@ -107,10 +107,12 @@ export default function About() {
           >
             {/* Name and Title */}
             <motion.div variants={itemVariants}>
-              <h1 className="text-4xl md:text-5xl font-bold text-emerald-400 mb-2 ">
+              <h1 className="text-4xl text-center md:text-left mt-8 md:mt-0 md:text-5xl font-bold text-emerald-400 mb-2 ">
                 Sumit Sharma
               </h1>
-              <p className="text-xl text-gray-400">Full Stack Developer</p>
+              <p className="text-xl text-gray-400 text-center  md:text-left">
+                Full Stack Developer
+              </p>
             </motion.div>
 
             {/* Description */}
@@ -118,11 +120,11 @@ export default function About() {
               variants={itemVariants}
               className="text-gray-300 leading-relaxed text-sm md:text-base "
             >
-              I build scalable, modern applications with a strong focus on clean
-              architecture, delightful UX, and performance. My toolkit spans
-              Java, React, Next.js, TypeScript, Tailwind CSS, and RestfulAPI —
-              bringing ideas to life from concept to production with robust APIs
-              and smooth interfaces.
+              As a final-year CSE student and aspiring front-end developer, I
+              aim to contribute to innovative web projects that combine clean
+              code, responsive design, and engaging user experiences. I am eager
+              to apply my skills in React and modern web technologies to solve
+              real-world problems and grow as a developer.
             </motion.p>
 
             {/* Stats */}
@@ -185,9 +187,11 @@ export default function About() {
             About Me
           </h2>
           <p className="text-gray-300 leading-relaxed text-base md:text-lg max-w-full ">
-            I'm a Software Developer, Content Creator, and Web Developer —
-            passionate about building fast, resilient applications and sharing
-            coding insights on Instagram and YouTube.
+            I'm a Software Developer,I enjoy turning ideas into code,
+            experimenting with new technologies, and constantly learning to
+            improve my craft. Whether it’s creating dynamic web apps,
+            animations, or small utility projects, I strive to write efficient
+            code while delivering engaging user experiences.
           </p>
           <p className="text-gray-300 leading-relaxed text-base md:text-lg max-w-full mt-4">
             I love turning ideas into scalable, user-friendly products that make
