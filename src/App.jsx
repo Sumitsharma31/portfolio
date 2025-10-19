@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CustomCursor from "./component/CustomCursor";
 import Navbar from "./component/Navbar";
 import ParticlesBackground from "./component/ParticlesBackground";
@@ -9,22 +10,29 @@ import Home from "./section/Home";
 import Projects from "./section/Projects";
 import Skills from "./section/skills";
 import Testimonials from "./section/testimonials";
+import IntroAnimation from "./component/IntroAnimation";
 
 function App() {
+  const [introDone, setIntroDone] = useState(false);
   return (
-    <div div className="relative gradient text-white">
-      <CustomCursor />
-      {/* <ParticlesBackground /> */}
-      <Navbar />
-      <Home />
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Testimonials />
-      <Contact />
-      <Footer />
-    </div>
+    <>
+      {!introDone && <IntroAnimation onFinish={() => setIntroDone(true)} />}
+      {introDone && (
+        <div div className="relative gradient text-white">
+          <CustomCursor />
+
+          <Navbar />
+          <Home />
+          <About />
+          <Skills />
+          <Projects />
+          <Experience />
+          <Testimonials />
+          <Contact />
+          <Footer />
+        </div>
+      )}
+    </>
   );
 }
 

@@ -136,7 +136,7 @@ export default function Home() {
                 View My Work
               </a>
               <a
-                href="/RESUME.pdf"
+                href={`${import.meta.env.BASE_URL}RESUME.pdf`}
                 download
                 className="px-6 py-3 rounded-full text-lg font-medium 
               text-black bg-white hover:bg-gray-200 shadow-lg hover:scale-105 transition-all"
