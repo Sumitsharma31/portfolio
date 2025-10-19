@@ -73,7 +73,7 @@ export default function Navbar() {
             className="text-white text-3xl focus:outline-none"
             aria-label="open Menu"
           >
-            <FiMenu />
+            <FiMenu className="cursor-pointer" />
           </button>
         </div>
         <div className="hidden lg:block">

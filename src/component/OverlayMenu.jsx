@@ -21,7 +21,7 @@ export default function OverlayMenu({ isOpen, onClose }) {
             className="absolute top-6 right-6 text-white text-3xl"
             aria-level="close Menu"
           >
-            <FiX />
+            <FiX className="cursor-pointer" />
           </button>
           <ul className="space-y-6 text-center ">
             {[

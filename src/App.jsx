@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CustomCursor from "./component/CustomCursor";
 import Navbar from "./component/Navbar";
-import ParticlesBackground from "./component/ParticlesBackground";
+
 import About from "./section/About";
 import Contact from "./section/Contact";
 import Experience from "./section/Experience";
