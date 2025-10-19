@@ -155,7 +155,7 @@ export default function About() {
               <motion.button
                 whileHover={{ scale: 1.05, rotate: 1 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-white text-black font-semibold px-8 py-3 rounded-lg hover:shadow-lg transition-shadow"
+                className="bg-white text-black font-semibold px-8 py-3 rounded-lg hover:shadow-lg transition-shadow cursor-pointer"
               >
                 View Projects
               </motion.button>
@@ -165,7 +165,7 @@ export default function About() {
                   boxShadow: "0 0 20px rgba(16, 185, 129, 0.5)",
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-transparent border border-white/30 text-white font-semibold px-8 py-3 rounded-lg hover:border-emerald-400 transition-colors"
+                className="bg-transparent border border-white/30 text-white font-semibold px-8 py-3 rounded-lg hover:border-emerald-400 transition-colors cursor-pointer"
               >
                 Get in Touch
               </motion.button>
