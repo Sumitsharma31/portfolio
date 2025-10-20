@@ -34,32 +34,6 @@ export default function About() {
 
   return (
     <div className=" min-h-screen bg-gradient-to-br from-[#2c3336] via-[#0d1c2b] to-[#07181e] p-6 md:p-20 ">
-      {/* Background gradient blobs */}
-      <div className="absolute inset-0">
-        <div
-          className="absolute -top-32 -left-32
-          w-[70vw] md:w-[40vw]
-          h-[70vw] md:h-[40vw]
-          max-w-[500px] max-h-[500px]
-          rounded-full 
-          bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2]
-          opacity-30 md:opacity-10
-          blur-[100px] md:blur-[150px]
-          animate-pulse "
-        ></div>
-
-        <div
-          className="absolute bottom-0 right-0
-          w-[70vw] md:w-[40vw]
-          h-[70vw] md:h-[40vw]
-          max-w-[500px] max-h-[500px]
-          rounded-full 
-          bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2]
-          opacity-30 md:opacity-10
-          blur-[100px] md:blur-[150px]
-          animate-pulse delay-500"
-        ></div>
-      </div>
       {/* Main Profile Section */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -107,7 +81,7 @@ export default function About() {
           >
             {/* Name and Title */}
             <motion.div variants={itemVariants}>
-              <h1 className="text-4xl text-center md:text-left mt-8 md:mt-0 md:text-5xl font-bold text-emerald-400 mb-2 ">
+              <h1 className="text-4xl text-center md:text-left mt-8 md:mt-0 md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] mb-2 ">
                 Sumit Sharma
               </h1>
               <p className="text-xl text-gray-400 text-center  md:text-left">
