@@ -4,12 +4,12 @@ import Navbar from "./component/Navbar";
 
 import About from "./section/About";
 import Contact from "./section/Contact";
-import Experience from "./section/Experience";
+
 import Footer from "./section/Footer";
 import Home from "./section/Home";
 import Projects from "./section/Projects";
 import Skills from "./section/Skills";
-import Testimonials from "./section/testimonials";
+
 import IntroAnimation from "./component/IntroAnimation";
 
 function App() {
