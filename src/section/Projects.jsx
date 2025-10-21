@@ -129,7 +129,10 @@ const Projects = () => {
   const currentProject = projects[currentIndex];
 
   return (
-    <div className="projects-section min-h-screen bg-gradient-to-br from-[#2c3336] via-[#0d1c2b] to-[#07181e] py-12 px-4">
+    <div
+      id="projects"
+      className="projects-section min-h-screen bg-gradient-to-br from-[#2c3336] via-[#0d1c2b] to-[#07181e] py-12 px-4"
+    >
       <div className="max-w-6xl mx-auto ">
         {/* Header (No changes) */}
         <motion.div

@@ -146,7 +146,7 @@ export default function About() {
                 whileTap={{ scale: 0.98 }}
                 className="bg-transparent border border-white/30 text-white font-semibold px-8 py-3 rounded-lg hover:border-emerald-400 transition-colors cursor-pointer"
               >
-                Get in Touch
+                <a href="#contact">Get in Touch</a>
               </motion.button>
             </motion.div>
           </motion.div>
