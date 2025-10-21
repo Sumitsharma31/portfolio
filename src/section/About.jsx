@@ -84,10 +84,10 @@ export default function About() {
           >
             {/* Name and Title */}
             <motion.div variants={itemVariants}>
-              <h1 className="text-4xl text-center md:text-left mt-8 md:mt-0 md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] mb-2 ">
+              <h1 className="text-4xl mt-8 md:mt-4 md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] mb-2 text-center lg:text-left">
                 Sumit Sharma
               </h1>
-              <p className="text-xl text-gray-400 text-center  md:text-left">
+              <p className="text-xl text-gray-400 text-center  lg:text-left">
                 Full Stack Developer
               </p>
             </motion.div>
