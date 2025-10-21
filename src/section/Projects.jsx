@@ -62,32 +62,27 @@ const Projects = () => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const intervalRef = useRef(null);
 
-  // --- KEPT FIX for scroll jump ---
   useEffect(() => {
     if (window.history.scrollRestoration) {
       window.history.scrollRestoration = "manual";
     }
   }, []);
 
-  // --- RE-ADDED Auto-play timer ---
   useEffect(() => {
     if (isAutoPlaying) {
       intervalRef.current = setInterval(() => {
-        // This is the auto-play logic
         setCurrentIndex((prevIndex) =>
           prevIndex === projects.length - 1 ? 0 : prevIndex + 1
         );
-      }, 7000); // 7 seconds
+      }, 7000);
     }
-    // Cleanup function to clear the interval
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isAutoPlaying, projects.length]); // Re-run when auto-play is toggled
+  }, [isAutoPlaying, projects.length]);
 
-  // --- RE-ADDED Reset timer function ---
   const resetTimer = () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
@@ -98,28 +93,25 @@ const Projects = () => {
     }, 100);
   };
 
-  // --- RENAMED to 'Manual' ---
   const handleManualNext = () => {
-    resetTimer(); // Reset timer on manual click
+    resetTimer();
     setCurrentIndex((prevIndex) =>
       prevIndex === projects.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const handleManualPrevious = () => {
-    resetTimer(); // Reset timer on manual click
+    resetTimer();
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? projects.length - 1 : prevIndex - 1
     );
   };
 
   const handleDotClick = (index) => {
-    resetTimer(); // Reset timer on manual click
+    resetTimer();
     setCurrentIndex(index);
   };
-  // ---
 
-  // --- Fade Variants ---
   const fadeVariants = {
     enter: {
       opacity: 0,
@@ -179,27 +171,24 @@ const Projects = () => {
           {/* Next Button (No changes) */}
           <motion.button
             onClick={handleManualNext}
-            className="absolute right-2 md:-right-16 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-sm p-3 md:p-4 rounded-full text-white hover:bg-white/20 transition-all duration-300 group hidden lg:block"
+            className="absolute right-2 md:-right-16 top-1/2 -translate-y-12 z-30 bg-white/10 backdrop-blur-sm p-3 md:p-4 rounded-full text-white hover:bg-white/20 transition-all duration-300 group hidden lg:block"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
             <FaArrowRight className="text-xl md:text-2xl group-hover:translate-x-1 transition-transform" />
           </motion.button>
 
-          {/* ============================================================
+          {/*
             == RESPONSIVE FIX APPLIED HERE ==
-            ============================================================
+            I have updated these mobile-first min-height values.
+            'min-h-[640px]' = mobile default
+            'sm:min-h-[560px]' = small screen
+            'md:min-h-[580px]' = medium screen
             
-            This is now mobile-first. It sets a height for mobile,
-            then a new height for 'sm' screens, and another for 'md'.
-            
-            - min-h-[780px] = Default for mobile (buttons are stacked)
-            - sm:min-h-[650px] = For 'sm' screens and up
-            - md:min-h-[600px] = For 'md' screens and up
-            
-            **ADJUST THESE VALUES** to fit your tallest card.
+            **Adjust these values** (e.g., to 'min-h-[620px]')
+            to perfectly fit your tallest card.
           */}
-          <div className="relative min-h-[780px] sm:min-h-[650px] md:min-h-[600px]">
+          <div className="relative min-h-[640px] sm:min-h-[560px] md:min-h-[580px]">
             <AnimatePresence>
               <motion.div
                 key={currentIndex}
@@ -210,18 +199,14 @@ const Projects = () => {
                 transition={{
                   opacity: { duration: 0.4 },
                 }}
-                tabIndex="-1" // KEPT: Prevents focus jump
-                className="w-full absolute top-0 left-0" // KEPT: Prevents layout shift
+                tabIndex="-1"
+                className="w-full absolute top-0 left-0"
               >
-                {/* Project Card (No changes below)
-                  This card is already responsive with 'md:' and 'sm:' classes.
-                */}
+                {/* Project Card (No changes below) */}
                 <div className="bg-gray-800/50 backdrop-blur-lg rounded-2xl overflow-hidden shadow-2xl border border-gray-700/50">
-                  {/* Card Header with Gradient */}
                   <div
                     className={`h-48 md:h-56 bg-gradient-to-br ${currentProject.gradient} relative overflow-hidden`}
                   >
-                    {/* ... (no changes inside card) ... */}
                     <motion.div
                       className="absolute inset-0 opacity-30 "
                       animate={{
@@ -248,8 +233,6 @@ const Projects = () => {
                       />
                     )}
                   </div>
-
-                  {/* Card Content - FULLY VISIBLE */}
                   <div className="p-6 md:p-8">
                     <motion.h3
                       className="text-2xl md:text-3xl font-bold text-white mb-3"
@@ -259,7 +242,6 @@ const Projects = () => {
                     >
                       {currentProject.title}
                     </motion.h3>
-
                     <motion.p
                       className="text-gray-300 mb-6 text-base md:text-lg leading-relaxed"
                       initial={{ opacity: 0, x: -20 }}
@@ -268,8 +250,6 @@ const Projects = () => {
                     >
                       {currentProject.description}
                     </motion.p>
-
-                    {/* Technologies */}
                     <motion.div
                       className="flex flex-wrap gap-2 mb-6"
                       initial={{ opacity: 0, y: 20 }}
@@ -285,11 +265,6 @@ const Projects = () => {
                         </span>
                       ))}
                     </motion.div>
-
-                    {/* This 'div' is already responsive.
-                      It stacks with 'flex-col' on mobile...
-                      ...and goes side-by-side with 'sm:flex-row'
-                    */}
                     <motion.div
                       className="flex flex-col sm:flex-row gap-3"
                       initial={{ opacity: 0, y: 20 }}
@@ -307,7 +282,6 @@ const Projects = () => {
                         <span>View Project</span>
                         <FaExternalLinkAlt className="text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                       </motion.a>
-
                       <motion.a
                         href={currentProject.srcLink}
                         target="_blank"
