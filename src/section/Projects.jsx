@@ -160,16 +160,16 @@ const Projects = () => {
         >
           <motion.h2
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2, delay: 0.2 }}
           >
             Featured Projects
           </motion.h2>
           <motion.p
             className="text-gray-400 text-lg"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2, delay: 0.2 }}
           >
             Explore my recent work and innovations
