@@ -46,7 +46,7 @@ const FooterGlass = () => {
           className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-12 mb-8"
         >
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4 bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl font-bold text-white mb-4  ">
               Let's Connect
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
