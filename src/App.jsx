@@ -18,7 +18,7 @@ function App() {
     <>
       {!introDone && <IntroAnimation onFinish={() => setIntroDone(true)} />}
       {introDone && (
-        <div div className="relative gradient text-white">
+        <div className="relative gradient text-white">
           <CustomCursor />
 
           <Navbar />

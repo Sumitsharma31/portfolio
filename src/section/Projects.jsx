@@ -5,14 +5,13 @@ import {
   FaArrowLeft,
   FaGithub,
   FaExternalLinkAlt,
-  FaCode,
   FaCloud,
   FaHotel,
 } from "react-icons/fa";
 import { SiCodechef } from "react-icons/si";
 
 const Projects = () => {
-  // Project data array
+  // Project data array (No changes)
   const projects = [
     {
       id: 1,
@@ -62,96 +61,85 @@ const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const intervalRef = useRef(null);
-  const [direction, setDirection] = useState(0);
 
-  // Auto-play functionality
+  // --- KEPT FIX for scroll jump ---
+  useEffect(() => {
+    if (window.history.scrollRestoration) {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
+
+  // --- RE-ADDED Auto-play timer ---
   useEffect(() => {
     if (isAutoPlaying) {
       intervalRef.current = setInterval(() => {
-        handleNext();
-      }, 7000);
+        // This is the auto-play logic
+        setCurrentIndex((prevIndex) =>
+          prevIndex === projects.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 7000); // 7 seconds
     }
-
+    // Cleanup function to clear the interval
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
       }
     };
-  }, [currentIndex, isAutoPlaying]);
+  }, [isAutoPlaying, projects.length]); // Re-run when auto-play is toggled
 
-  // Reset timer function
+  // --- RE-ADDED Reset timer function ---
   const resetTimer = () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
     setIsAutoPlaying(false);
-
-    // Restart auto-play after a delay
     setTimeout(() => {
       setIsAutoPlaying(true);
     }, 100);
   };
 
-  // Navigation handlers
-  const handleNext = () => {
-    setDirection(1);
+  // --- RENAMED to 'Manual' ---
+  const handleManualNext = () => {
+    resetTimer(); // Reset timer on manual click
     setCurrentIndex((prevIndex) =>
       prevIndex === projects.length - 1 ? 0 : prevIndex + 1
     );
   };
 
-  const handlePrevious = () => {
-    setDirection(-1);
+  const handleManualPrevious = () => {
+    resetTimer(); // Reset timer on manual click
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? projects.length - 1 : prevIndex - 1
     );
   };
 
-  const handleManualNext = () => {
-    resetTimer();
-    handleNext();
+  const handleDotClick = (index) => {
+    resetTimer(); // Reset timer on manual click
+    setCurrentIndex(index);
   };
+  // ---
 
-  const handleManualPrevious = () => {
-    resetTimer();
-    handlePrevious();
-  };
-
-  // Animation variants
-  const slideVariants = {
-    enter: (direction) => ({
-      x: direction > 0 ? 1000 : -1000,
+  // --- Fade Variants ---
+  const fadeVariants = {
+    enter: {
       opacity: 0,
-      scale: 0.8,
-    }),
+    },
     center: {
       zIndex: 1,
-      x: 0,
       opacity: 1,
-      scale: 1,
     },
-    exit: (direction) => ({
+    exit: {
       zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
       opacity: 0,
-      scale: 0.8,
-    }),
-  };
-
-  const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset, velocity) => {
-    return Math.abs(offset) * velocity;
+    },
   };
 
   const currentProject = projects[currentIndex];
 
   return (
-    <div
-      id="projects"
-      className="min-h-screen bg-gradient-to-br from-[#2c3336] via-[#0d1c2b] to-[#07181e] py-12 px-4"
-    >
+    <div className="projects-section min-h-screen bg-gradient-to-br from-[#2c3336] via-[#0d1c2b] to-[#07181e] py-12 px-4">
       <div className="max-w-6xl mx-auto ">
-        {/* Header */}
+        {/* Header (No changes) */}
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
@@ -178,7 +166,7 @@ const Projects = () => {
 
         {/* Main Slider Container */}
         <div className="relative">
-          {/* Previous Button */}
+          {/* Previous Button (No changes) */}
           <motion.button
             onClick={handleManualPrevious}
             className="absolute left-2 md:-left-16 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-sm p-3 md:p-4 rounded-full text-white hover:bg-white/20 transition-all duration-300 group hidden lg:block"
@@ -188,7 +176,7 @@ const Projects = () => {
             <FaArrowLeft className="text-xl md:text-2xl group-hover:-translate-x-1 transition-transform" />
           </motion.button>
 
-          {/* Next Button */}
+          {/* Next Button (No changes) */}
           <motion.button
             onClick={handleManualNext}
             className="absolute right-2 md:-right-16 top-1/2 -translate-y-1/2 z-30 bg-white/10 backdrop-blur-sm p-3 md:p-4 rounded-full text-white hover:bg-white/20 transition-all duration-300 group hidden lg:block"
@@ -198,42 +186,42 @@ const Projects = () => {
             <FaArrowRight className="text-xl md:text-2xl group-hover:translate-x-1 transition-transform" />
           </motion.button>
 
-          {/* Slider Content - */}
-          <div className="relative">
-            <AnimatePresence initial={false} custom={direction} mode="wait">
+          {/* ============================================================
+            == RESPONSIVE FIX APPLIED HERE ==
+            ============================================================
+            
+            This is now mobile-first. It sets a height for mobile,
+            then a new height for 'sm' screens, and another for 'md'.
+            
+            - min-h-[780px] = Default for mobile (buttons are stacked)
+            - sm:min-h-[650px] = For 'sm' screens and up
+            - md:min-h-[600px] = For 'md' screens and up
+            
+            **ADJUST THESE VALUES** to fit your tallest card.
+          */}
+          <div className="relative min-h-[780px] sm:min-h-[650px] md:min-h-[600px]">
+            <AnimatePresence>
               <motion.div
                 key={currentIndex}
-                custom={direction}
-                variants={slideVariants}
+                variants={fadeVariants}
                 initial="enter"
                 animate="center"
                 exit="exit"
                 transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.3 },
-                  scale: { duration: 0.3 },
+                  opacity: { duration: 0.4 },
                 }}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={1}
-                onDragEnd={(e, { offset, velocity }) => {
-                  const swipe = swipePower(offset.x, velocity.x);
-
-                  if (swipe < -swipeConfidenceThreshold) {
-                    handleManualNext();
-                  } else if (swipe > swipeConfidenceThreshold) {
-                    handleManualPrevious();
-                  }
-                }}
-                className="w-full"
+                tabIndex="-1" // KEPT: Prevents focus jump
+                className="w-full absolute top-0 left-0" // KEPT: Prevents layout shift
               >
-                {/* Project Card - RESPONSIVE HEIGHT */}
+                {/* Project Card (No changes below)
+                  This card is already responsive with 'md:' and 'sm:' classes.
+                */}
                 <div className="bg-gray-800/50 backdrop-blur-lg rounded-2xl overflow-hidden shadow-2xl border border-gray-700/50">
                   {/* Card Header with Gradient */}
                   <div
                     className={`h-48 md:h-56 bg-gradient-to-br ${currentProject.gradient} relative overflow-hidden`}
                   >
-                    {/* Animated Background Pattern */}
+                    {/* ... (no changes inside card) ... */}
                     <motion.div
                       className="absolute inset-0 opacity-30 "
                       animate={{
@@ -249,13 +237,9 @@ const Projects = () => {
                         backgroundSize: "60px 60px",
                       }}
                     />
-
-                    {/* Project Icon */}
                     <motion.div className="absolute top-6 right-6 text-white/80">
                       {currentProject.icon}
                     </motion.div>
-
-                    {/* Optional: Project Image Overlay */}
                     {currentProject.image && (
                       <img
                         src={currentProject.image}
@@ -302,7 +286,10 @@ const Projects = () => {
                       ))}
                     </motion.div>
 
-                    {/* View Project Button - RESPONSIVE LAYOUT */}
+                    {/* This 'div' is already responsive.
+                      It stacks with 'flex-col' on mobile...
+                      ...and goes side-by-side with 'sm:flex-row'
+                    */}
                     <motion.div
                       className="flex flex-col sm:flex-row gap-3"
                       initial={{ opacity: 0, y: 20 }}
@@ -339,16 +326,12 @@ const Projects = () => {
             </AnimatePresence>
           </div>
 
-          {/* Slider Indicators */}
+          {/* Slider Indicators (No changes) */}
           <div className="flex justify-center gap-2 mt-6">
             {projects.map((_, index) => (
               <motion.button
                 key={index}
-                onClick={() => {
-                  setDirection(index > currentIndex ? 1 : -1);
-                  setCurrentIndex(index);
-                  resetTimer();
-                }}
+                onClick={() => handleDotClick(index)}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   index === currentIndex
                     ? "w-8 bg-emerald-400"
@@ -360,8 +343,6 @@ const Projects = () => {
             ))}
           </div>
         </div>
-
-        {/* Additional Info */}
       </div>
     </div>
   );
