@@ -51,7 +51,7 @@ const Skills = () => {
   useEffect(() => {
     const animateMarquee = () => {
       if (marqueeRef.current && !isHovered) {
-        const speed = 0.5; // Slowed down for a smoother look
+        const speed = 2;
         positionRef.current -= speed * scrollDirection;
         const marqueeWidth = marqueeRef.current.scrollWidth / 2;
         if (
@@ -75,8 +75,7 @@ const Skills = () => {
 
   return (
     <section
-      // CHANGED: Added `relative` for positioning context and `overflow-hidden` to contain the blobs.
-      // I also changed bg-black to a slightly lighter bg-gray-900 for better visibility.
+      id="skills"
       className="relative bg-black text-white py-16 md:py-24 overflow-hidden "
       aria-labelledby="skills-heading"
     >

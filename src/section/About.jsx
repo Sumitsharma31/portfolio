@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin } from "lucide-react";
+
 import profilePhoto from "../assets/p.jpg";
 
 export default function About() {
@@ -33,7 +33,10 @@ export default function About() {
   };
 
   return (
-    <div className=" min-h-screen bg-gradient-to-br from-[#2c3336] via-[#0d1c2b] to-[#07181e] p-6 md:p-20 ">
+    <div
+      id="about"
+      className=" min-h-screen bg-gradient-to-br from-[#2c3336] via-[#0d1c2b] to-[#07181e] p-6 md:p-20 "
+    >
       {/* Main Profile Section */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -60,7 +63,7 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-cyan-500 rounded-3xl p-1 ">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-cyan-500 rounded-3xl object-cover  ">
                 <img
                   src={profilePhoto}
                   alt="Profile"
@@ -133,7 +136,7 @@ export default function About() {
                 whileTap={{ scale: 0.98 }}
                 className="bg-white text-black font-semibold px-8 py-3 rounded-lg hover:shadow-lg transition-shadow cursor-pointer"
               >
-                View Projects
+                <a href="#projects">View Projects</a>
               </motion.button>
               <motion.button
                 whileHover={{

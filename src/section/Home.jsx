@@ -6,9 +6,13 @@ import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import avator from "../assets/avator.png";
 
 const socials = [
-  { Icon: FaXTwitter, label: "x", href: "https://twitter.com/" },
-  { Icon: FaLinkedin, label: "linkedin", href: "https://twitter.com/" },
-  { Icon: FaGithub, label: "github", href: "https://twitter.com/" },
+  { Icon: FaXTwitter, label: "x", href: "https://x.com/C_SUMI_020" },
+  {
+    Icon: FaLinkedin,
+    label: "linkedin",
+    href: "https://www.linkedin.com/in/sumit-sharma-1906762a2/",
+  },
+  { Icon: FaGithub, label: "github", href: "https://github.com/Sumitsharma31" },
 ];
 const glowVariants = {
   initial: { scale: 1, y: 0, filter: "drop-shadow(0 0 0 rgba(0,0,0,0))" },
