@@ -1,4 +1,4 @@
-**👨‍💻 Personal Portfolio Website**[![Live Demo](https://img.shields.io/badge/Live%20Demo-%2300C853.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://sumitsharma31.github.io/portfolio/)
+**👨‍💻 Personal Portfolio Website** [![Live Demo](https://img.shields.io/badge/Live%20Demo-%2300C853.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://sumitsharma31.github.io/portfolio/)
 
 Welcome to the repository for my personal portfolio website. This is a fully responsive and animated web application built from scratch using React and Tailwind CSS to showcase my skills, projects, and provide an easy way for visitors to connect with me.
 
@@ -28,6 +28,7 @@ This project is built with the following technologies:
 <p align="center"> <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" /> <img src="https://img.shields.io/badge/React_DOM-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React DOM" /> <img src="https://img.shields.io/badge/Framer_Motion-EF0075?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" /> <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" /> <img src="https://img.shields.io/badge/EmailJS-0B6CAD?style=for-the-badge&logo=gmail&logoColor=white" alt="EmailJS" /> </p>
 
 **📸 Screenshots**
+
 **Desktop View**
 
 
@@ -50,7 +51,7 @@ This project is built with the following technologies:
 
 Here is the basic folder structure for this project:
 
-''' 📁 **my-portfolio/**
+``` 📁 **my-portfolio/**
 ├── 📁 dist/
 │   ├── 📁 assets/
 │   │   └── 📄 RESUME.pdf
@@ -90,7 +91,7 @@ Here is the basic folder structure for this project:
 ├── 📄 package.json
 ├── 📄 README.md
 └── 📄 vite.config.js
- '''
+ ```
 
 
 **🛠️ Installation Steps**
