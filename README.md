@@ -30,13 +30,15 @@ This project is built with the following technologies:
 **📸 Screenshots**
 
 **Desktop View**
-![Home-Page Screenshot](https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-Home.png?raw=true)
-![About-Page Screenshot](https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-About.png?raw=true)
+<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-Home.png?raw=true" width="400" alt="Home-Page Screenshot">
+<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-About.png?raw=true" width="400" alt="About-Page Screenshot">
+
 
 
 **Mobile View**
-![Home-Page Screenshot](https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MHome-View.jpg?raw=true)
-![About-Page Screenshot](https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MAbout-view.jpg?raw=true)
+<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MHome-View.jpg?raw=true" width="400"  alt="Home-Page Screenshot">
+<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MAbout-view.jpg?raw=true" width="400" alt="About-Page Screenshot">
+
 
 
 
