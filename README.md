@@ -33,10 +33,13 @@ This project is built with the following technologies:
 **📸 Screenshots**
 
 **Desktop View**
-
-
-<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-Home.png?raw=true" width="200" alt="Home-Page Screenshot" style="margin-right:10">
+<p align="center">
+  <img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-Home.png?raw=true" width="200" alt="Home-Page Screenshot" > &nbsp;&nbsp;
 <img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-About.png?raw=true" width="200" alt="About-Page Screenshot">
+</p>
+
+
+
 
 **Mobile View**
 
