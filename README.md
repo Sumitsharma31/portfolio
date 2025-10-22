@@ -34,18 +34,21 @@ This project is built with the following technologies:
 
 **Desktop View**
 <p align="center">
-  <img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-Home.png?raw=true" width="200" alt="Home-Page Screenshot" > &nbsp;&nbsp;
-<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-About.png?raw=true" width="200" alt="About-Page Screenshot">
+  <img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-Home.png?raw=true" width="300" alt="Home-Page Screenshot" > &nbsp;&nbsp;
+<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-About.png?raw=true" width="300" alt="About-Page Screenshot">
 </p>
 
 
 
 
 **Mobile View**
+<p aling="center">
+<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MHome-View.jpg?raw=true" width="300" height='450' alt="Home-Page Screenshot" >
+<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MAbout-view.jpg?raw=true" width="300" height='450' alt="About-Page Screenshot">
+</p>
 
 
-<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MHome-View.jpg?raw=true" width="200" height='450' alt="Home-Page Screenshot" style="margin-right:10">
-<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MAbout-view.jpg?raw=true" width="200" height='450' alt="About-Page Screenshot">
+
 
 
 
