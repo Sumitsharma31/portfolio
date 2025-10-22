@@ -1,4 +1,4 @@
-**👨‍💻 Personal Portfolio Website**
+**👨‍💻 Personal Portfolio Website**[![Live Demo](https://img.shields.io/badge/Live%20Demo-%2300C853.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://sumitsharma31.github.io/portfolio/)
 
 Welcome to the repository for my personal portfolio website. This is a fully responsive and animated web application built from scratch using React and Tailwind CSS to showcase my skills, projects, and provide an easy way for visitors to connect with me.
 
@@ -25,19 +25,19 @@ Reusable Components: Easily scalable and maintainable components for projects, s
 **⚙️ Tech Stack**
 
 This project is built with the following technologies:
+<p align="center"> <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" /> <img src="https://img.shields.io/badge/React_DOM-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React DOM" /> <img src="https://img.shields.io/badge/Framer_Motion-EF0075?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" /> <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" /> <img src="https://img.shields.io/badge/EmailJS-0B6CAD?style=for-the-badge&logo=gmail&logoColor=white" alt="EmailJS" /> </p>
 
-**🚀 Live Demo**
-
-You can view the live deployment of the project here:[![Live Demo](https://img.shields.io/badge/Live%20Demo-%2300C853.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://sumitsharma31.github.io/portfolio/)
-
-📸 Screenshots
-
-
+**📸 Screenshots**
 
 **Desktop View**
+![Home-Page Screenshot](https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-Home.png?raw=true)
+![About-Page Screenshot](https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-About.png?raw=true)
 
 
 **Mobile View**
+![Home-Page Screenshot](https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MHome-View.jpg?raw=true)
+![About-Page Screenshot](https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MAbout-view.jpg?raw=true)
+
 
 
 
@@ -95,7 +95,7 @@ To run this project locally, follow these simple steps:
 
 Clone the repository:
 
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/Sumitsharma31/portfolio.git)
+git clone [https://github.com/Sumitsharma31/portfolio.git](https://github.com/Sumitsharma31/portfolio.git)
 
 
 Navigate to the project directory:
