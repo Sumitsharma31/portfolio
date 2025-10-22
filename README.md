@@ -1,4 +1,5 @@
-**👨‍💻 Personal Portfolio Website** [![Live Demo](https://img.shields.io/badge/Live%20Demo-%2300C853.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://sumitsharma31.github.io/portfolio/)
+**👨‍💻 Personal Portfolio Website** 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-%23ff6d00?style=for-the-badge&logo=github&logoColor=white)](https://sumitsharma31.github.io/portfolio/)
 
 Welcome to the repository for my personal portfolio website. This is a fully responsive and animated web application built from scratch using React and Tailwind CSS to showcase my skills, projects, and provide an easy way for visitors to connect with me.
 
@@ -100,7 +101,7 @@ To run this project locally, follow these simple steps:
 
 Clone the repository:
 
-git clone [https://github.com/Sumitsharma31/portfolio.git](https://github.com/Sumitsharma31/portfolio.git)
+```git clone [https://github.com/Sumitsharma31/portfolio.git](https://github.com/Sumitsharma31/portfolio.git)```
 
 
 Navigate to the project directory:
@@ -110,12 +111,12 @@ cd your-repo-name
 
 Install the dependencies:
 
-`npm install`
+```npm install```
 
 
 Start the development server:
 
-`npm run dev`
+```npm run dev```
 
 
 Open http://localhost:5173 (or the port shown in your terminal) in your browser to see the app.
