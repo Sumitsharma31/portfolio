@@ -50,46 +50,47 @@ This project is built with the following technologies:
 
 Here is the basic folder structure for this project:
 
-my-portfolio/
-├── dist/
-│   ├── assets/
-│   │   └── RESUME.pdf
-│   └── index.html
+''' 📁 **my-portfolio/**
+├── 📁 dist/
+│   ├── 📁 assets/
+│   │   └── 📄 RESUME.pdf
+│   └── 📄 index.html
 │
-├── node_modules/
+├── 📁 node_modules/
 │
-├── public/
+├── 📁 public/
 │
-├── src/
-│   ├── assets/
+├── 📁 src/
+│   ├── 📁 assets/
 │   │
-│   ├── component/
-│   │   ├── CustomCursor.jsx
-│   │   ├── IntroAnimation.jsx
-│   │   ├── Navbar.jsx
-│   │   ├── OverlayMenu.jsx
-│   │   └── ParticlesBackground.jsx
+│   ├── 📁 component/
+│   │   ├── ⚛️ CustomCursor.jsx
+│   │   ├── ⚛️ IntroAnimation.jsx
+│   │   ├── ⚛️ Navbar.jsx
+│   │   ├── ⚛️ OverlayMenu.jsx
+│   │   └── ⚛️ ParticlesBackground.jsx
 │   │
-│   ├── section/
-│   │   ├── About.jsx
-│   │   ├── Contact.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Home.jsx
-│   │   ├── Projects.jsx
-│   │   └── Skills.jsx
+│   ├── 📁 section/
+│   │   ├── ⚛️ About.jsx
+│   │   ├── ⚛️ Contact.jsx
+│   │   ├── ⚛️ Footer.jsx
+│   │   ├── ⚛️ Home.jsx
+│   │   ├── ⚛️ Projects.jsx
+│   │   └── ⚛️ Skills.jsx
 │   │
-│   ├── App.jsx
-│   ├── index.css
-│   └── main.jsx
+│   ├── ⚛️ App.jsx
+│   ├── 🎨 index.css
+│   └── ⚛️ main.jsx
 │
-├── .env
-├── .gitignore
-├── eslint.config.js
-├── index.html
-├── package-lock.json
-├── package.json
-├── README.md
-└── vite.config.js
+├── 📄 .env
+├── 📄 .gitignore
+├── 📄 eslint.config.js
+├── 📄 index.html
+├── 📄 package-lock.json
+├── 📄 package.json
+├── 📄 README.md
+└── 📄 vite.config.js
+ '''
 
 
 **🛠️ Installation Steps**
