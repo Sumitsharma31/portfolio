@@ -1,12 +1,12 @@
-👨‍💻 Personal Portfolio Website
+**👨‍💻 Personal Portfolio Website**
 
 Welcome to the repository for my personal portfolio website. This is a fully responsive and animated web application built from scratch using React and Tailwind CSS to showcase my skills, projects, and provide an easy way for visitors to connect with me.
 
-📖 About This Project
+**📖 About This Project**
 
 This portfolio is a modern, single-page application designed to make a strong first impression. It features a clean user interface, smooth animations, and a dynamic particle background. The primary goal is to present my work and capabilities in a professional and visually engaging manner.
 
-🖥️ Features
+**🖥️ Features**
 
 Dynamic UI: Built with React for a fast, component-based, and maintainable codebase.
 
@@ -22,61 +22,80 @@ Clean Navigation: A simple and intuitive navigation menu for a seamless user exp
 
 Reusable Components: Easily scalable and maintainable components for projects, skills, and contact info.
 
-⚙️ Tech Stack
+**⚙️ Tech Stack**
 
 This project is built with the following technologies:
 
-🚀 Live Demo
+**🚀 Live Demo**
 
-You can view the live deployment of the project here:
-
-👉 Visit the Live Site 👈
-(Replace the link with your actual deployment URL!)
+You can view the live deployment of the project here:[![Live Demo](https://img.shields.io/badge/Live%20Demo-%2300C853.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://sumitsharma31.github.io/portfolio/)
 
 📸 Screenshots
 
-(Add your screenshots here. You can drag and drop images into this section or use markdown!)
-
-Desktop View
-
-Mobile View
 
 
+**Desktop View**
+
+
+**Mobile View**
 
 
 
-📂 Folder Structure
+
+
+## 📂 Folder Structure
 
 Here is the basic folder structure for this project:
 
-personal-portfolio/
+my-portfolio/
+├── dist/
+│   ├── assets/
+│   │   └── RESUME.pdf
+│   └── index.html
+│
+├── node_modules/
+│
 ├── public/
-│   └── (Static assets like favicon)
+│
 ├── src/
 │   ├── assets/
-│   │   └── (Images, resumes, etc.)
-│   ├── components/
+│   │
+│   ├── component/
+│   │   ├── CustomCursor.jsx
+│   │   ├── IntroAnimation.jsx
 │   │   ├── Navbar.jsx
-│   │   ├── Hero.jsx
-│   │   ├── Projects.jsx
+│   │   ├── OverlayMenu.jsx
+│   │   └── ParticlesBackground.jsx
+│   │
+│   ├── section/
+│   │   ├── About.jsx
 │   │   ├── Contact.jsx
-│   │   └── ...
+│   │   ├── Footer.jsx
+│   │   ├── Home.jsx
+│   │   ├── Projects.jsx
+│   │   └── Skills.jsx
+│   │
 │   ├── App.jsx
 │   ├── index.css
 │   └── main.jsx
+│
+├── .env
 ├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
 ├── package.json
-├── tailwind.config.js
-└── README.md
+├── README.md
+└── vite.config.js
 
 
-🛠️ Installation Steps
+**🛠️ Installation Steps**
 
 To run this project locally, follow these simple steps:
 
 Clone the repository:
 
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+git clone [https://github.com/your-username/your-repo-name.git](https://github.com/Sumitsharma31/portfolio.git)
 
 
 Navigate to the project directory:
@@ -86,29 +105,24 @@ cd your-repo-name
 
 Install the dependencies:
 
-npm install
+`npm install`
 
 
 Start the development server:
 
-npm run dev
+`npm run dev`
 
 
 Open http://localhost:5173 (or the port shown in your terminal) in your browser to see the app.
 
-📬 Connect With Me
+**📬 Connect With Me**
 
 Feel free to reach out, connect, or just say hi!
 
-LinkedIn: Your Name
+Email: ssumit10kr@gmail.com
 
-GitHub: @your-username
 
-Email: your.email@example.com
-
-(Remember to replace the placeholder links with your actual profiles!)
-
-⭐ Acknowledgments & Contributing
+**⭐ Acknowledgments & Contributing**
 
 If you liked this project, please leave a ⭐️!
 
