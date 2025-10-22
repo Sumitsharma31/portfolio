@@ -28,16 +28,17 @@ This project is built with the following technologies:
 <p align="center"> <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" /> <img src="https://img.shields.io/badge/React_DOM-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React DOM" /> <img src="https://img.shields.io/badge/Framer_Motion-EF0075?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" /> <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" /> <img src="https://img.shields.io/badge/EmailJS-0B6CAD?style=for-the-badge&logo=gmail&logoColor=white" alt="EmailJS" /> </p>
 
 **📸 Screenshots**
-
 **Desktop View**
+
+
 <img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-Home.png?raw=true" width="400" alt="Home-Page Screenshot">
 <img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-About.png?raw=true" width="400" alt="About-Page Screenshot">
 
-
-
 **Mobile View**
-<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MHome-View.jpg?raw=true" width="400"  alt="Home-Page Screenshot">
-<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MAbout-view.jpg?raw=true" width="400" alt="About-Page Screenshot">
+
+
+<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MHome-View.jpg?raw=true" width="300" height='450' alt="Home-Page Screenshot">
+<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MAbout-view.jpg?raw=true" width="300" height='450' alt="About-Page Screenshot">
 
 
 
