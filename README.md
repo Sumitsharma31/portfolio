@@ -1,5 +1,7 @@
 **👨‍💻 Personal Portfolio Website** 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-%23ff6d00?style=for-the-badge&logo=github&logoColor=white)](https://sumitsharma31.github.io/portfolio/)
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-%2300c853?style=for-the-badge&logo=vercel&logoColor=white)](https://sumitsharma31.github.io/portfolio/)
+
 
 Welcome to the repository for my personal portfolio website. This is a fully responsive and animated web application built from scratch using React and Tailwind CSS to showcase my skills, projects, and provide an easy way for visitors to connect with me.
 
