@@ -11,18 +11,9 @@
 
 **🖥️ Features**
 <p>
-Dynamic UI: Built with React for a fast, component-based, and maintainable codebase.
-
-Smooth Animations: Implemented using Framer Motion for engaging page transitions and interactive element effects.
-
-Fully Responsive Design: Crafted with Tailwind CSS for a pixel-perfect, mobile-first design that looks great on all devices.
-
-Functional Contact Form: Integrated with EmailJS to allow visitors to send messages directly to my inbox without a dedicated backend.
-
-Interactive Background: Features an animated particle background to add a modern, tech-savvy feel.
+Dynamic UI: Built with React for a fast, component-based, and maintainable codebase. Smooth Animations: Implemented using Framer Motion for engaging page transitions and interactive element effects. Fully Responsive Design: Crafted with Tailwind CSS for a pixel-perfect, mobile-first design that looks great on all devices. Functional Contact Form: Integrated with EmailJS to allow visitors to send messages directly to my inbox without a dedicated backend. Interactive Background: Features an animated particle background to ad a modern, tech-savvy feel.
 
 Clean Navigation: A simple and intuitive navigation menu for a seamless user experience.
-
 Reusable Components: Easily scalable and maintainable components for projects, skills, and contact info.</p>
 
 **⚙️ Tech Stack**
@@ -99,7 +90,6 @@ This project is built with the following technologies:
 **🛠️ Installation Steps**
 
 <p>To run this project locally, follow these simple steps:</p>
-
 <p>Clone the repository:</p>
 
 ```git clone [https://github.com/Sumitsharma31/portfolio.git](https://github.com/Sumitsharma31/portfolio.git)```
@@ -125,7 +115,6 @@ This project is built with the following technologies:
 **📬 Connect With Me**
 
 <p>Feel free to reach out, connect, or just say hi!</p>
-
 <p>Email: ssumit10kr@gmail.com</p>
 
 
