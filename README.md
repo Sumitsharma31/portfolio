@@ -35,14 +35,14 @@ This project is built with the following technologies:
 **Desktop View**
 
 
-<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-Home.png?raw=true" width="400" alt="Home-Page Screenshot">
-<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-About.png?raw=true" width="400" alt="About-Page Screenshot">
+<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-Home.png?raw=true" width="200" alt="Home-Page Screenshot" style="margin-right:10">
+<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/Lr-About.png?raw=true" width="200" alt="About-Page Screenshot">
 
 **Mobile View**
 
 
-<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MHome-View.jpg?raw=true" width="300" height='450' alt="Home-Page Screenshot">
-<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MAbout-view.jpg?raw=true" width="300" height='450' alt="About-Page Screenshot">
+<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MHome-View.jpg?raw=true" width="200" height='450' alt="Home-Page Screenshot" style="margin-right:10">
+<img src="https://github.com/Sumitsharma31/portfolio/blob/main/src/assets/screeenshots/MAbout-view.jpg?raw=true" width="200" height='450' alt="About-Page Screenshot">
 
 
 
