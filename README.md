@@ -3,14 +3,14 @@
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-%2300c853?style=for-the-badge&logo=vercel&logoColor=white)](https://sumitsharma31.github.io/portfolio/)
 
 
-Welcome to the repository for my personal portfolio website. This is a fully responsive and animated web application built from scratch using React and Tailwind CSS to showcase my skills, projects, and provide an easy way for visitors to connect with me.
+<p>Welcome to the repository for my personal portfolio website. This is a fully responsive and animated web application built from scratch using React and Tailwind CSS to showcase my skills, projects, and provide an easy way for visitors to connect with me.</p>
 
 **📖 About This Project**
 
-This portfolio is a modern, single-page application designed to make a strong first impression. It features a clean user interface, smooth animations, and a dynamic particle background. The primary goal is to present my work and capabilities in a professional and visually engaging manner.
+<p>This portfolio is a modern, single-page application designed to make a strong first impression. It features a clean user interface, smooth animations, and a dynamic particle background. The primary goal is to present my work and capabilities in a professional and visually engaging manner.</p>
 
 **🖥️ Features**
-
+<p>
 Dynamic UI: Built with React for a fast, component-based, and maintainable codebase.
 
 Smooth Animations: Implemented using Framer Motion for engaging page transitions and interactive element effects.
@@ -23,7 +23,7 @@ Interactive Background: Features an animated particle background to add a modern
 
 Clean Navigation: A simple and intuitive navigation menu for a seamless user experience.
 
-Reusable Components: Easily scalable and maintainable components for projects, skills, and contact info.
+Reusable Components: Easily scalable and maintainable components for projects, skills, and contact info.</p>
 
 **⚙️ Tech Stack**
 
@@ -49,18 +49,11 @@ This project is built with the following technologies:
 
 
 
-
-
-
-
-
-
-
 ## 📂 Folder Structure
 
-Here is the basic folder structure for this project:
+<p>Here is the basic folder structure for this project:</p>
 
-``` 📁 **my-portfolio/**
+``` 1📁 **my-portfolio/**
 ├── 📁 dist/
 │   ├── 📁 assets/
 │   │   └── 📄 RESUME.pdf
@@ -105,39 +98,39 @@ Here is the basic folder structure for this project:
 
 **🛠️ Installation Steps**
 
-To run this project locally, follow these simple steps:
+<p>To run this project locally, follow these simple steps:</p>
 
-Clone the repository:
+<p>Clone the repository:</p>
 
 ```git clone [https://github.com/Sumitsharma31/portfolio.git](https://github.com/Sumitsharma31/portfolio.git)```
 
 
-Navigate to the project directory:
+<p>Navigate to the project directory:</p>
 
-cd your-repo-name
+```cd your-repo-name```
 
 
-Install the dependencies:
+**Install the dependencies:**
 
 ```npm install```
 
 
-Start the development server:
+**Start the development server:**
 
 ```npm run dev```
 
 
-Open http://localhost:5173 (or the port shown in your terminal) in your browser to see the app.
+<p>Open http://localhost:5173 (or the port shown in your terminal) in your browser to see the app.</p>
 
 **📬 Connect With Me**
 
-Feel free to reach out, connect, or just say hi!
+<p>Feel free to reach out, connect, or just say hi!</p>
 
-Email: ssumit10kr@gmail.com
+<p>Email: ssumit10kr@gmail.com</p>
 
 
 **⭐ Acknowledgments & Contributing**
 
-If you liked this project, please leave a ⭐️!
+<p>If you liked this project, please leave a ⭐️!
 
-Contributions are always welcome. If you have any suggestions or find a bug, please feel free to open an issue or submit a pull request.
+Contributions are always welcome. If you have any suggestions or find a bug, please feel free to open an issue or submit a pull request.</p>
