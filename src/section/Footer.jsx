@@ -30,10 +30,10 @@ const FooterGlass = () => {
   ];
 
   return (
-    <footer className="relative bg-slate-950 pt-20 pb-10 overflow-hidden">
+    <footer className="relative bg-black pt-20 pb-10 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-76 bg-emerald-500/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />
       </div>
 

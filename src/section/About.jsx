@@ -57,7 +57,7 @@ export default function About() {
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="relative w-64 h-64"
+              className="relative w-54 h-54"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -158,7 +158,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-16  p-8 "
+          className="mt-4  p-8 "
         >
           <h2 className=" text-3xl md:text-4xl font-bold text-white mb-6">
             About Me
@@ -170,7 +170,7 @@ export default function About() {
             animations, or small utility projects, I strive to write efficient
             code while delivering engaging user experiences.
           </p>
-          <p className="text-gray-300 leading-relaxed text-base md:text-lg max-w-full mt-4">
+          <p className="text-gray-300 leading-relaxed text-base md:text-lg max-w-full mt-2">
             I love turning ideas into scalable, user-friendly products that make
             an impact.
           </p>

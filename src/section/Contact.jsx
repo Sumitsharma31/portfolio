@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Astra from "../assets/Astra.png";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import toast, { Toaster } from "react-hot-toast";
 import ParticlesBackground from "../component/ParticlesBackground";
 
@@ -106,7 +106,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen relative bg-neutral-950 flex items-center justify-center p-6"
+      className="min-h-screen relative bg-black  flex items-center justify-center p-10"
     >
       <ParticlesBackground />
       <Toaster position="top-right" />
@@ -127,10 +127,19 @@ const Contact = () => {
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-purple-600/20 blur-3xl rounded-full" />
 
               {/* Replace with your actual image */}
-              <img
+              <motion.img
                 src={Astra}
                 alt="astra image"
-                className="relative z-10 w-full max-w-lg h-auto rounded-2xl shadow-2xl pointer-events-none"
+                className="relative z-10 w-full max-w-lg h-auto  pointer-events-none"
+                animate={{
+                  y: [0, -6, 0, 6, 0], // make movement visible
+                }}
+                transition={{
+                  duration: 2,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
                 onError={(e) => {
                   // Fallback to placeholder if image doesn't load
                   e.target.src =
@@ -167,7 +176,7 @@ const Contact = () => {
           {/* Right Side - Image (Hidden on mobile) */}
           <motion.div
             variants={itemVariants}
-            className="bg-neutral-900/50 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-neutral-800"
+            className=" rounded-2xl p-3 lg:p-10 border border-neutral-800"
           >
             <motion.div variants={itemVariants} className="mb-8">
               <h2 className="text-4xl font-bold text-white mb-3">
