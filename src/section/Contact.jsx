@@ -176,7 +176,7 @@ const Contact = () => {
           {/* Right Side - Image (Hidden on mobile) */}
           <motion.div
             variants={itemVariants}
-            className=" rounded-2xl p-3 lg:p-10 border border-neutral-800"
+            className=" rounded-2xl p-3 lg:p-10 border border-neutral-800 backdrop-blur-2xl"
           >
             <motion.div variants={itemVariants} className="mb-8">
               <h2 className="text-4xl font-bold text-white mb-3">
