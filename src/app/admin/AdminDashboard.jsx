@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
+import { FaTrash } from "react-icons/fa";
 
 export default function AdminDashboard() {
   const [projects, setProjects] = useState([]);
@@ -58,6 +59,25 @@ export default function AdminDashboard() {
       toast.error("Failed to fetch projects");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    if (!confirm("Are you sure you want to delete this project?")) return;
+    
+    try {
+      const res = await fetch(`/api/projects?id=${id}`, {
+        method: "DELETE",
+      });
+      
+      if (res.ok) {
+        toast.success("Project deleted successfully!");
+        fetchProjects();
+      } else {
+        toast.error("Failed to delete project");
+      }
+    } catch (error) {
+      toast.error("An error occurred while deleting");
     }
   };
 
@@ -169,8 +189,15 @@ export default function AdminDashboard() {
         ) : (
           <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2">
             {projects.map((project) => (
-              <div key={project._id} className="bg-gray-800/30 p-4 rounded-lg border border-gray-700/30">
-                <h3 className="font-bold text-lg text-white">{project.title}</h3>
+              <div key={project._id} className="bg-gray-800/30 p-4 rounded-lg border border-gray-700/30 relative group">
+                <button
+                  onClick={() => handleDelete(project._id)}
+                  className="absolute top-4 right-4 text-red-500 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity bg-red-500/10 p-2 rounded-full"
+                  title="Delete Project"
+                >
+                  <FaTrash />
+                </button>
+                <h3 className="font-bold text-lg text-white pr-10">{project.title}</h3>
                 <p className="text-sm text-gray-400 line-clamp-2 mt-1">{project.description}</p>
                 <div className="flex gap-2 mt-3">
                   {project.technologies?.map((tech, i) => (

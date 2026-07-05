@@ -49,3 +49,21 @@ export async function POST(request) {
     return NextResponse.json({ error: "Failed to create project" }, { status: 500 });
   }
 }
+
+export async function DELETE(request) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const id = searchParams.get("id");
+    
+    if (!id) {
+      return NextResponse.json({ error: "Project ID is required" }, { status: 400 });
+    }
+
+    await connectToDatabase();
+    await Project.findByIdAndDelete(id);
+    return NextResponse.json({ message: "Project deleted successfully" }, { status: 200 });
+  } catch (error) {
+    console.error("Error deleting project:", error);
+    return NextResponse.json({ error: "Failed to delete project" }, { status: 500 });
+  }
+}
