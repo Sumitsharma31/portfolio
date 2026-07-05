@@ -31,6 +31,22 @@ export default function Home() {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
+  const [resumeUrl, setResumeUrl] = useState("/RESUME.pdf");
+
+  useEffect(() => {
+    const fetchResume = async () => {
+      try {
+        const res = await fetch("/api/resume");
+        if (res.ok) {
+          const data = await res.json();
+          if (data.url) setResumeUrl(data.url);
+        }
+      } catch (error) {
+        console.error("Failed to fetch resume");
+      }
+    };
+    fetchResume();
+  }, []);
 
   useEffect(() => {
     const current = roles[index];
@@ -139,8 +155,10 @@ export default function Home() {
                 View My Work
               </a>
               <a
-                href={`${import.meta.env.BASE_URL}RESUME.pdf`}
+                href={resumeUrl}
                 download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-3 rounded-full text-lg font-medium 
               text-black bg-white hover:bg-gray-200 shadow-lg hover:scale-105 transition-all"
               >

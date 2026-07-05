@@ -11,56 +11,33 @@ import {
 import { SiCodechef } from "react-icons/si";
 
 const Projects = () => {
-  // Project data array (No changes)
-  const projects = [
-    {
-      id: 1,
-      title: "AI Recipe Generator",
-      description:
-        "Smart recipe suggestions powered by AI, creating personalized meal plans based on your preferences and dietary needs.",
-      image:
-        "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=800&q=80",
-      gradient: "from-emerald-400 to-cyan-400",
-      icon: <SiCodechef className="text-4xl" />,
-      technologies: ["React", "OpenAI API", "Tailwind"],
-      link: "https://sumitsharma31.github.io/AI-Recipe-Generator/",
-      srcLink: "https://github.com/Sumitsharma31/AI-Recipe-Generator",
-      color: "emerald",
-    },
-    {
-      id: 2,
-      title: "Weather App",
-      description:
-        "Real-time weather forecasting with beautiful visualizations and accurate predictions for locations worldwide.",
-      image:
-        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&q=80",
-      gradient: "from-cyan-400 to-blue-500",
-      icon: <FaCloud className="text-4xl" />,
-      technologies: ["React", "Tailwind", "Weather API"],
-      link: "https://sumitsharma31.github.io/Wether-App/",
-      srcLink: "https://github.com/Sumitsharma31/Wether-App",
-      color: "cyan",
-    },
-    {
-      id: 3,
-      title: "Hotel Room Management System",
-      description:
-        "Comprehensive hotel management solution with booking, inventory, and customer relationship features.",
-      image:
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
-      gradient: "from-purple-400 to-pink-400",
-      icon: <FaHotel className="text-4xl" />,
-      technologies: ["React", "Firebase", "Tailwind"],
-      link: "https://sumitsharma31.github.io/hotel-room-management/",
-      srcLink:
-        "https://github.com/Sumitsharma31/hotel-room-management/tree/main/hotel-management-system",
-      color: "purple",
-    },
-  ];
-
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const intervalRef = useRef(null);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const res = await fetch("/api/projects");
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.length > 0) {
+            setProjects(data);
+          } else {
+            // Fallback to empty if none found
+            setProjects([]);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProjects();
+  }, []);
 
   useEffect(() => {
     if (window.history.scrollRestoration) {
@@ -127,6 +104,22 @@ const Projects = () => {
   };
 
   const currentProject = projects[currentIndex];
+
+  if (loading) {
+    return (
+      <div id="projects" className="projects-section min-h-screen bg-gradient-to-br from-[#2c3336] via-[#0d1c2b] to-[#07181e] py-12 px-4 flex items-center justify-center">
+        <div className="text-white text-xl">Loading Projects...</div>
+      </div>
+    );
+  }
+
+  if (!projects || projects.length === 0) {
+    return (
+      <div id="projects" className="projects-section min-h-screen bg-gradient-to-br from-[#2c3336] via-[#0d1c2b] to-[#07181e] py-12 px-4 flex items-center justify-center">
+        <div className="text-white text-xl">No projects found. Add some from the Admin Portal!</div>
+      </div>
+    );
+  }
 
   return (
     <div

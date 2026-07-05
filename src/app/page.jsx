@@ -1,17 +1,18 @@
-import { useState } from "react";
-import CustomCursor from "./component/CustomCursor";
-import Navbar from "./component/Navbar";
-import About from "./section/About";
-import Contact from "./section/Contact";
-import Footer from "./section/Footer";
-import Home from "./section/Home";
-import Projects from "./section/Projects";
-import Skills from "./section/Skills";
-import IntroAnimation from "./component/IntroAnimation";
-// Import the new ChatBot component
-import ChatBot from "./component/ChatBot";
+"use client";
 
-function App() {
+import { useState } from "react";
+import CustomCursor from "../component/CustomCursor";
+import Navbar from "../component/Navbar";
+import About from "../section/About";
+import Contact from "../section/Contact";
+import Footer from "../section/Footer";
+import Home from "../section/Home";
+import Projects from "../section/Projects";
+import Skills from "../section/Skills";
+import IntroAnimation from "../component/IntroAnimation";
+import ChatBot from "../component/ChatBot";
+
+export default function Page() {
   const [introDone, setIntroDone] = useState(false);
 
   return (
@@ -39,5 +40,3 @@ function App() {
     </>
   );
 }
-
-export default App;
