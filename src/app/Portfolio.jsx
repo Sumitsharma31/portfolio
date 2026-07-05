@@ -10,7 +10,7 @@ import Home from "../section/Home";
 import Projects from "../section/Projects";
 import Skills from "../section/Skills";
 import IntroAnimation from "../component/IntroAnimation";
-import ChatBot from "../component/ChatBot";
+import WhatsAppButton from "../component/WhatsAppButton";
 
 export default function Page() {
   const [introDone, setIntroDone] = useState(false);
@@ -33,8 +33,8 @@ export default function Page() {
             <Contact />
             <Footer />
           </div>
-          {/* The ChatBot component is now rendered, which triggers its useEffect */}
-          <ChatBot />
+          {/* The WhatsAppButton component fetches and displays the WhatsApp link dynamically */}
+          <WhatsAppButton />
         </>
       )}
     </>

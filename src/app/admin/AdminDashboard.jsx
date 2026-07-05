@@ -15,10 +15,12 @@ export default function AdminDashboard() {
     srcLink: "",
   });
   const [resumeUrl, setResumeUrl] = useState("");
+  const [whatsappNumber, setWhatsappNumber] = useState("");
 
   useEffect(() => {
     fetchProjects();
     fetchResume();
+    fetchSettings();
   }, []);
 
   const fetchResume = async () => {
@@ -30,6 +32,18 @@ export default function AdminDashboard() {
       }
     } catch (error) {
       console.error("Failed to fetch resume");
+    }
+  };
+
+  const fetchSettings = async () => {
+    try {
+      const res = await fetch("/api/settings");
+      if (res.ok) {
+        const data = await res.json();
+        if (data.whatsappNumber) setWhatsappNumber(data.whatsappNumber);
+      }
+    } catch (error) {
+      console.error("Failed to fetch settings");
     }
   };
 
@@ -85,6 +99,24 @@ export default function AdminDashboard() {
         toast.success("Resume updated successfully!");
       } else {
         toast.error("Failed to update resume");
+      }
+    } catch (error) {
+      toast.error("An error occurred");
+    }
+  };
+
+  const handleWhatsappSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("/api/settings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ whatsappNumber }),
+      });
+      if (res.ok) {
+        toast.success("WhatsApp number updated successfully!");
+      } else {
+        toast.error("Failed to update WhatsApp number");
       }
     } catch (error) {
       toast.error("An error occurred");
@@ -160,6 +192,19 @@ export default function AdminDashboard() {
             </div>
             <button type="submit" className="w-full py-3 mt-4 bg-purple-500 hover:bg-purple-600 text-white rounded-lg font-semibold transition-colors">
               Save Resume Link
+            </button>
+          </form>
+        </div>
+
+        <div className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-gray-700/50 shadow-2xl mt-8">
+          <h2 className="text-2xl font-bold mb-6 text-green-400">Update WhatsApp Contact</h2>
+          <form onSubmit={handleWhatsappSubmit} className="space-y-4">
+            <div>
+              <label className="block text-gray-300 text-sm mb-2">WhatsApp Number (with country code)</label>
+              <input type="text" required value={whatsappNumber} onChange={e => setWhatsappNumber(e.target.value)} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-green-500 outline-none" placeholder="e.g. +919876543210" />
+            </div>
+            <button type="submit" className="w-full py-3 mt-4 bg-green-500 hover:bg-green-600 text-white rounded-lg font-semibold transition-colors">
+              Save WhatsApp Number
             </button>
           </form>
         </div>
