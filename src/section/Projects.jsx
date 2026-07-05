@@ -7,6 +7,11 @@ import {
   FaExternalLinkAlt,
   FaCloud,
   FaHotel,
+  FaLaptopCode,
+  FaMobileAlt,
+  FaDatabase,
+  FaGlobe,
+  FaPaintBrush,
 } from "react-icons/fa";
 import { SiCodechef } from "react-icons/si";
 
@@ -17,6 +22,27 @@ const getShortName = (title) => {
     return words[0].substring(0, 3).toUpperCase();
   }
   return words.map(w => w[0]).join("").substring(0, 3).toUpperCase();
+};
+
+const getProjectIcon = (project) => {
+  if (!project) return <FaLaptopCode className="text-4xl drop-shadow-md" />;
+  
+  const searchStr = (project.title + " " + (project.technologies?.join(" ") || "")).toLowerCase();
+  
+  if (searchStr.includes("mobile") || searchStr.includes("react native") || searchStr.includes("flutter") || searchStr.includes("android") || searchStr.includes("ios")) {
+    return <FaMobileAlt className="text-4xl drop-shadow-md" />;
+  }
+  if (searchStr.includes("api") || searchStr.includes("node") || searchStr.includes("express") || searchStr.includes("backend") || searchStr.includes("mongo") || searchStr.includes("database")) {
+    return <FaDatabase className="text-4xl drop-shadow-md" />;
+  }
+  if (searchStr.includes("design") || searchStr.includes("css") || searchStr.includes("tailwind") || searchStr.includes("ui") || searchStr.includes("figma")) {
+    return <FaPaintBrush className="text-4xl drop-shadow-md" />;
+  }
+  if (searchStr.includes("web") || searchStr.includes("react") || searchStr.includes("next") || searchStr.includes("frontend")) {
+    return <FaGlobe className="text-4xl drop-shadow-md" />;
+  }
+  
+  return <FaLaptopCode className="text-4xl drop-shadow-md" />;
 };
 
 const Projects = () => {
@@ -228,7 +254,7 @@ const Projects = () => {
                       }}
                     />
                     <motion.div className="absolute top-6 right-6 text-white/80 z-20">
-                      {currentProject.icon}
+                      {getProjectIcon(currentProject)}
                     </motion.div>
                     {currentProject.image ? (
                       <img
