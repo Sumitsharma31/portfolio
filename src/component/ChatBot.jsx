@@ -4,7 +4,7 @@ import { createChat } from "@n8n/chat";
 const ChatBot = () => {
   useEffect(() => {
     createChat({
-      webhookUrl: import.meta.env.VITE_N8N_CHAT_WEBHOOK,
+      webhookUrl: process.env.NEXT_PUBLIC_N8N_CHAT_WEBHOOK || "https://n8n-example.com/webhook",
       initialMessages: ["Namaste! 🙏 How can I help you today?"],
     });
   }, []);
