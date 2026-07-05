@@ -24,7 +24,10 @@ export async function POST(request) {
         const query = encodeURIComponent(body.title || "technology");
         
         if (accessKey) {
-          const unsplashRes = await fetch(`https://api.unsplash.com/photos/random?query=${query}&orientation=landscape&client_id=${accessKey}`);
+          const unsplashRes = await fetch(
+            `https://api.unsplash.com/photos/random?query=${query}&orientation=landscape&client_id=${accessKey}`,
+            { cache: "no-store" }
+          );
           if (unsplashRes.ok) {
             const data = await unsplashRes.json();
             body.image = data.urls.regular;
