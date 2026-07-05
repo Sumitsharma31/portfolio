@@ -65,7 +65,7 @@ export default function About() {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-cyan-500 rounded-3xl object-cover  ">
                 <img
-                  src={profilePhoto}
+                  src={profilePhoto.src}
                   alt="Profile"
                   className="w-full h-full rounded-3xl object-cover  "
                 />

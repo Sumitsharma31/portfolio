@@ -128,7 +128,7 @@ const Contact = () => {
 
               {/* Replace with your actual image */}
               <motion.img
-                src={Astra}
+                src={Astra.src}
                 alt="astra image"
                 className="relative z-10 w-full max-w-lg h-auto  pointer-events-none"
                 animate={{
