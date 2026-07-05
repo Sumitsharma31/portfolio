@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
-import { FaTrash } from "react-icons/fa";
+import { FaTrash, FaSpinner } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function AdminDashboard() {
   const [projects, setProjects] = useState([]);
@@ -146,96 +147,138 @@ export default function AdminDashboard() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
       {/* Form Section */}
-      <div className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-gray-700/50 shadow-2xl">
+      <motion.div 
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-gray-700/50 shadow-2xl"
+      >
         <h2 className="text-2xl font-bold mb-6 text-emerald-400">Add New Project</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-gray-300 text-sm mb-2">Title</label>
-            <input type="text" required value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-emerald-500 outline-none" />
+            <input type="text" required value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/50 outline-none transition-all" />
           </div>
           <div>
             <label className="block text-gray-300 text-sm mb-2">Description</label>
-            <textarea required value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-emerald-500 outline-none h-24" />
+            <textarea required value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/50 outline-none transition-all h-24" />
           </div>
           <div>
             <label className="block text-gray-300 text-sm mb-2">Image URL</label>
-            <input type="text" value={formData.image} onChange={e => setFormData({...formData, image: e.target.value})} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-emerald-500 outline-none" />
+            <input type="text" value={formData.image} onChange={e => setFormData({...formData, image: e.target.value})} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/50 outline-none transition-all" />
           </div>
           <div>
             <label className="block text-gray-300 text-sm mb-2">Technologies (comma separated)</label>
-            <input type="text" value={formData.technologies} onChange={e => setFormData({...formData, technologies: e.target.value})} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-emerald-500 outline-none" placeholder="React, Tailwind, Next.js" />
+            <input type="text" value={formData.technologies} onChange={e => setFormData({...formData, technologies: e.target.value})} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/50 outline-none transition-all" placeholder="React, Tailwind, Next.js" />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-gray-300 text-sm mb-2">Live Link</label>
-              <input type="text" value={formData.link} onChange={e => setFormData({...formData, link: e.target.value})} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-emerald-500 outline-none" />
+              <input type="text" value={formData.link} onChange={e => setFormData({...formData, link: e.target.value})} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/50 outline-none transition-all" />
             </div>
             <div>
               <label className="block text-gray-300 text-sm mb-2">Source Link</label>
-              <input type="text" value={formData.srcLink} onChange={e => setFormData({...formData, srcLink: e.target.value})} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-emerald-500 outline-none" />
+              <input type="text" value={formData.srcLink} onChange={e => setFormData({...formData, srcLink: e.target.value})} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/50 outline-none transition-all" />
             </div>
           </div>
-          <button type="submit" className="w-full py-3 mt-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-semibold transition-colors">
+          <motion.button 
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            type="submit" 
+            className="w-full py-3 mt-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg font-semibold transition-colors"
+          >
             Save Project
-          </button>
+          </motion.button>
         </form>
-      </div>
+      </motion.div>
 
       {/* List Section */}
-      <div>
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <h2 className="text-2xl font-bold mb-6 text-cyan-400">Existing Projects</h2>
         {loading ? (
-          <p className="text-gray-400">Loading projects...</p>
+          <div className="flex justify-center items-center py-12">
+            <FaSpinner className="animate-spin text-4xl text-cyan-400" />
+          </div>
         ) : (
-          <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2">
-            {projects.map((project) => (
-              <div key={project._id} className="bg-gray-800/30 p-4 rounded-lg border border-gray-700/30 relative group">
+          <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+            {projects.map((project, index) => (
+              <motion.div 
+                key={project._id} 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.05 }}
+                className="bg-gray-800/30 p-4 rounded-lg border border-gray-700/30 relative group transition-all hover:bg-gray-800/50 hover:border-gray-600/50"
+              >
                 <button
                   onClick={() => handleDelete(project._id)}
-                  className="absolute top-4 right-4 text-red-500 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity bg-red-500/10 p-2 rounded-full"
+                  className="absolute top-4 right-4 text-red-500 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity bg-red-500/10 p-2 rounded-full hover:bg-red-500/20"
                   title="Delete Project"
                 >
                   <FaTrash />
                 </button>
                 <h3 className="font-bold text-lg text-white pr-10">{project.title}</h3>
                 <p className="text-sm text-gray-400 line-clamp-2 mt-1">{project.description}</p>
-                <div className="flex gap-2 mt-3">
+                <div className="flex gap-2 mt-3 flex-wrap">
                   {project.technologies?.map((tech, i) => (
-                    <span key={i} className="text-xs bg-gray-700 px-2 py-1 rounded text-gray-300">{tech}</span>
+                    <span key={i} className="text-xs bg-gray-700/50 border border-gray-600 px-2 py-1 rounded-md text-gray-300">{tech}</span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
             {projects.length === 0 && <p className="text-gray-400">No projects found.</p>}
           </div>
         )}
 
-        <div className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-gray-700/50 shadow-2xl mt-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-gray-700/50 shadow-2xl mt-8"
+        >
           <h2 className="text-2xl font-bold mb-6 text-purple-400">Update Resume</h2>
           <form onSubmit={handleResumeSubmit} className="space-y-4">
             <div>
               <label className="block text-gray-300 text-sm mb-2">Resume PDF URL</label>
-              <input type="text" required value={resumeUrl} onChange={e => setResumeUrl(e.target.value)} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-purple-500 outline-none" placeholder="https://example.com/resume.pdf" />
+              <input type="text" required value={resumeUrl} onChange={e => setResumeUrl(e.target.value)} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-purple-500 focus:ring-1 focus:ring-purple-500/50 outline-none transition-all" placeholder="https://example.com/resume.pdf" />
             </div>
-            <button type="submit" className="w-full py-3 mt-4 bg-purple-500 hover:bg-purple-600 text-white rounded-lg font-semibold transition-colors">
+            <motion.button 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              type="submit" 
+              className="w-full py-3 mt-4 bg-purple-500 hover:bg-purple-600 text-white rounded-lg font-semibold transition-colors"
+            >
               Save Resume Link
-            </button>
+            </motion.button>
           </form>
-        </div>
+        </motion.div>
 
-        <div className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-gray-700/50 shadow-2xl mt-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-gray-700/50 shadow-2xl mt-8"
+        >
           <h2 className="text-2xl font-bold mb-6 text-green-400">Update WhatsApp Contact</h2>
           <form onSubmit={handleWhatsappSubmit} className="space-y-4">
             <div>
               <label className="block text-gray-300 text-sm mb-2">WhatsApp Number (with country code)</label>
-              <input type="text" required value={whatsappNumber} onChange={e => setWhatsappNumber(e.target.value)} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-green-500 outline-none" placeholder="e.g. +919876543210" />
+              <input type="text" required value={whatsappNumber} onChange={e => setWhatsappNumber(e.target.value)} className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:border-green-500 focus:ring-1 focus:ring-green-500/50 outline-none transition-all" placeholder="e.g. +919876543210" />
             </div>
-            <button type="submit" className="w-full py-3 mt-4 bg-green-500 hover:bg-green-600 text-white rounded-lg font-semibold transition-colors">
+            <motion.button 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              type="submit" 
+              className="w-full py-3 mt-4 bg-green-500 hover:bg-green-600 text-white rounded-lg font-semibold transition-colors"
+            >
               Save WhatsApp Number
-            </button>
+            </motion.button>
           </form>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
+import ToasterProvider from "@/component/ToasterProvider";
 
 export const metadata = {
   title: "my-portfolio",
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
         </Script>
 
         {children}
+        <ToasterProvider />
       </body>
     </html>
   );

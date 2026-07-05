@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Astra from "../assets/Astra.png";
 import { motion, AnimatePresence } from "framer-motion";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import ParticlesBackground from "../component/ParticlesBackground";
 
 const Contact = () => {
@@ -109,7 +109,6 @@ const Contact = () => {
       className="min-h-screen relative bg-black  flex items-center justify-center p-10"
     >
       <ParticlesBackground />
-      <Toaster position="top-right" />
 
       <div className="max-w-7xl w-full">
         <motion.div
