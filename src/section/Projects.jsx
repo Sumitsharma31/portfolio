@@ -10,6 +10,15 @@ import {
 } from "react-icons/fa";
 import { SiCodechef } from "react-icons/si";
 
+const getShortName = (title) => {
+  if (!title) return "";
+  const words = title.split(" ").filter(w => w.trim().length > 0);
+  if (words.length === 1) {
+    return words[0].substring(0, 3).toUpperCase();
+  }
+  return words.map(w => w[0]).join("").substring(0, 3).toUpperCase();
+};
+
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -218,15 +227,21 @@ const Projects = () => {
                         backgroundSize: "60px 60px",
                       }}
                     />
-                    <motion.div className="absolute top-6 right-6 text-white/80">
+                    <motion.div className="absolute top-6 right-6 text-white/80 z-20">
                       {currentProject.icon}
                     </motion.div>
-                    {currentProject.image && (
+                    {currentProject.image ? (
                       <img
                         src={currentProject.image}
                         alt={currentProject.title}
                         className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50"
                       />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                         <span className="text-7xl md:text-8xl font-bold text-white/50 drop-shadow-2xl tracking-widest" style={{ fontFamily: "'Dancing Script', cursive" }}>
+                           {getShortName(currentProject.title)}
+                         </span>
+                      </div>
                     )}
                   </div>
                   <div className="p-6 md:p-8">
