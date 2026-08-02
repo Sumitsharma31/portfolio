@@ -80,12 +80,28 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      if (serviceId && templateId && publicKey) {
+        await emailjs.sendForm(
+          serviceId,
+          templateId,
+          formRef.current,
+          publicKey
+        );
+      } else {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+
+        if (!res.ok) {
+          throw new Error("Failed to send message via API");
+        }
+      }
 
       toast.success("Message sent successfully! We'll get back to you soon.");
 
@@ -96,7 +112,7 @@ const Contact = () => {
         message: "",
       });
     } catch (error) {
-      console.error("EmailJS Error:", error);
+      console.error("Contact Error:", error);
       toast.error("Failed to send message. Please try again later.");
     } finally {
       setLoading(false);
@@ -306,7 +322,7 @@ const Contact = () => {
               <p className="text-neutral-400 text-sm text-center">
                 Or reach us directly at{" "}
                 <a
-                  href="mailto:ssumit10kr@gmale.com"
+                  href="mailto:ssumit10kr@gmail.com"
                   className="text-blue-400 hover:text-blue-300 transition-colors"
                 >
                   ssumit10kr@gmail.com

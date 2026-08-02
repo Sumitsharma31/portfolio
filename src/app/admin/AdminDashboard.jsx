@@ -18,12 +18,41 @@ export default function AdminDashboard() {
   });
   const [resumeUrl, setResumeUrl] = useState("");
   const [whatsappNumber, setWhatsappNumber] = useState("");
+  const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     fetchProjects();
     fetchResume();
     fetchSettings();
+    fetchMessages();
   }, []);
+
+  const fetchMessages = async () => {
+    try {
+      const res = await fetch("/api/contact");
+      if (res.ok) {
+        const data = await res.json();
+        setMessages(data);
+      }
+    } catch (error) {
+      console.error("Failed to fetch messages");
+    }
+  };
+
+  const handleDeleteMessage = async (id) => {
+    if (!confirm("Are you sure you want to delete this message?")) return;
+    try {
+      const res = await fetch(`/api/contact?id=${id}`, { method: "DELETE" });
+      if (res.ok) {
+        toast.success("Message deleted successfully!");
+        fetchMessages();
+      } else {
+        toast.error("Failed to delete message");
+      }
+    } catch (error) {
+      toast.error("An error occurred while deleting message");
+    }
+  };
 
   const fetchResume = async () => {
     try {
@@ -277,6 +306,44 @@ export default function AdminDashboard() {
               Save WhatsApp Number
             </motion.button>
           </form>
+        </motion.div>
+
+        {/* Contact Messages Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-8 border border-gray-700/50 shadow-2xl mt-8"
+        >
+          <h2 className="text-2xl font-bold mb-6 text-blue-400">Received Contact Messages ({messages.length})</h2>
+          <div className="space-y-4 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+            {messages.map((msg) => (
+              <div key={msg._id} className="bg-gray-900/60 p-4 rounded-lg border border-gray-700/50 relative group">
+                <button
+                  onClick={() => handleDeleteMessage(msg._id)}
+                  className="absolute top-4 right-4 text-red-500 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity bg-red-500/10 p-2 rounded-full hover:bg-red-500/20"
+                  title="Delete Message"
+                >
+                  <FaTrash />
+                </button>
+                <div className="flex justify-between items-start pr-8 mb-1">
+                  <h3 className="font-bold text-white text-base">{msg.name}</h3>
+                  <span className="text-xs text-gray-500">
+                    {new Date(msg.createdAt).toLocaleDateString()}
+                  </span>
+                </div>
+                <a href={`mailto:${msg.email}`} className="text-xs text-blue-400 hover:underline block mb-2">
+                  {msg.email}
+                </a>
+                <p className="text-sm text-gray-300 bg-gray-800/50 p-3 rounded border border-gray-700/30 whitespace-pre-wrap">
+                  {msg.message}
+                </p>
+              </div>
+            ))}
+            {messages.length === 0 && (
+              <p className="text-gray-400 text-sm">No contact messages received yet.</p>
+            )}
+          </div>
         </motion.div>
       </motion.div>
     </div>
